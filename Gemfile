@@ -53,3 +53,4 @@ group :test do
 end
 
 gem "bootstrap", "~> 4.6"
+gem 'bootstrap-sass'
