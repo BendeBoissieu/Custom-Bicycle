@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Endpoint GET all bicycles
+/api/v1/bicycles
 
-Things you may want to cover:
+Endpoint GET all colors
+/api/v1/colors
 
-* Ruby version
+Endpoint GET all rims
+/api/v1/rims
 
-* System dependencies
+Endpoint GET all wheels
+/api/v1/wheels
 
-* Configuration
+Endpoint POST Create a color
+curl -i -X POST \
+     -H 'Content-Type: application/json'\
+     -d '{ "name": "red" }' \
+     http://localhost:3000/api/v1/colors
 
-* Database creation
+Endpoint POST Create a rim
+curl -i -X POST \
+     -H 'Content-Type: application/json' \
+     -d '{ "color_id": 1 }' \
+     http://localhost:3000/api/v1/rims
 
-* Database initialization
+Endpoint POST Create a wheels
+curl -i -X POST \
+     -H 'Content-Type: application/json' \
+     -d '{ "size": 17 }' \
+     http://localhost:3000/api/v1/wheels
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Endpoint POST Create a bicycle
+curl -i -X POST \
+     -H 'Content-Type: application/json' \
+     -d '{ "wheel_size_id": 1, rim_id: 2 }' \
+     http://localhost:3000/api/v1/bicycles
