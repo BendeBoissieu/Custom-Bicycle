@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
+  get '/customize', to: 'pages#home'
   get '/admin', to: 'pages#home'
   get '/admin/bicycles', to: 'pages#home'
   get '/admin/bicycles/new', to: 'pages#home'

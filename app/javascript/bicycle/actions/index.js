@@ -6,6 +6,9 @@ export const RIM_CREATED = 'RIM_CREATED';
 export const FETCH_WHEELS = 'FETCH_WHEELS';
 export const WHEEL_CREATED = 'WHEEL_CREATED';
 export const BICYCLE_CREATED = 'BICYCLE_CREATED';
+export const SELECT_WHEEL = 'SELECT_WHEEL';
+export const SELECT_RIM = 'SELECT_RIM';
+
 
 const ROOT_URL = '/api/v1';
 
@@ -95,4 +98,18 @@ export function createBicycle(body, callback) {
     type: BICYCLE_CREATED,
     payload: request
   };
+}
+
+export function selectWheel(wheel_id) {
+  return{
+    type: SELECT_WHEEL,
+    payload: wheel_id
+  }
+}
+
+export function selectRim(value) {
+  return{
+    type: SELECT_RIM,
+    payload: value
+  }
 }

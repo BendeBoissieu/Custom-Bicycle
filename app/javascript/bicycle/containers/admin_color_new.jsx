@@ -27,7 +27,7 @@ class ColorsNew extends Component {
   // in this form we need to create function onSubmit that will call the action post
   render() {
     return (
-      <div className="container_new_color">
+      <div className="container_new_element">
         <h2 style={{textAlign: 'center'}}>Add a new color</h2>
         <div className="new_Color">
           <form onSubmit={this.props.handleSubmit(this.onSubmit)}>

@@ -1,36 +1,22 @@
-h1 {
-  font-size: 32px;
-  margin-top: 25px;
-}
-h2 {
-  font-size: 22px;
-  margin-top: 15px;
-}
-p,th,td { font-size: 14px; }
-body {
-  font-family: "Lato", sans-serif;
+.flex-container {
+  display: flex;
 }
 
 .admin-sidenav {
   height: 100%;
   width: 160px;
-  position: fixed;
   z-index: 1;
-  top: 0;
-  left: 0;
   background-color: #111;
   overflow-x: hidden;
   padding-top: 20px;
   text-align: left;
+  min-height: 100vh;
 }
 
 .admin-main {
-  margin-left: 160px;
   font-size: 28px;
   padding: 0px 10px;
-}
-
-.admin-main .container {
+  width: 100%;
   text-align: center;
 }
 
@@ -47,18 +33,11 @@ body {
 }
 
 @media screen and (max-width : 768px) {
-  .admin-sidenav {padding-top: 50px;}
-  .admin-sidenav a {font-size: 18px;}
-}
-
-table, th, td {
-  border: 1px solid black;
-  padding: 5px 15px;
-  margin: auto;
-}
-
-th,td {
-  text-align: center;
+  .admin-sidenav {
+    padding-top: 50px;
+    width: 110px;
+  }
+  .admin-sidenav a {font-size: 14px;}
 }
 
 .container_new_element{

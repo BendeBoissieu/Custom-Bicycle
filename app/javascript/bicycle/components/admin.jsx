@@ -4,9 +4,9 @@ import AdminMenuList from '../containers/admin_menu_list';
 
 const Admin = () => {
   return (
-    <div>
-      <AdminBicyclesIndex />
+    <div className="flex-container">
       <AdminMenuList />
+      <AdminBicyclesIndex />
     </div>
   );
 };

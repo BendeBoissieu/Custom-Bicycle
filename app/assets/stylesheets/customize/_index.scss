@@ -1,0 +1,48 @@
+h3{
+  background-color: $light-green;
+  color: white;
+  padding: 5px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.color-preview {
+  border: 1px solid #CCC;
+  margin: 0 5px;
+  vertical-align: top;
+  float: left;
+  cursor: pointer;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.size-preview {
+  border: 1px solid #CCC;
+  margin: 0 5px;
+  vertical-align: top;
+  cursor: pointer;
+  overflow: hidden;
+  width: 35px;
+  height: 25px;
+  text-align: center;
+}
+
+.color-preview.color-selected, .size-preview.size-selected{
+  border: 2px solid $green;
+}
+
+.menu_customize {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.options {
+  background-color: $light-gray;
+  text-align: center;
+}
+.options p {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}

@@ -1,5 +1,17 @@
 # README
 
+To access to the admin part:
+Add /admin to the url
+
+On this area, you can see the colors, rims, wheels and bicycles available.
+
+To create a new bicycle, you have to select a wheel and a rim
+To create a rim, you have to select a color
+
+Color and Rim are separate, because the colors can be use if we decide to add a Saddle
+
+
+
 Endpoint GET all bicycles
 /api/v1/bicycles
 

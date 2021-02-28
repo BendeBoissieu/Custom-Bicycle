@@ -7,6 +7,7 @@ import logger from 'redux-logger';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory } from 'history';
 import App from './components/app';
+import Customize from './components/customize';
 import Admin from './components/admin';
 import AdminBicycleNew from './containers/admin_bicycle_new';
 import AdminColorsIndex from './containers/admin_colors_index';
@@ -27,7 +28,8 @@ const initialState = {
   bicycles: [],
   colors: [],
   rims: [],
-  wheels: []
+  wheels: [],
+  selectedRim: {rim_id: null, color: 'black'}
 };
 
 const reducers = combineReducers({
@@ -35,7 +37,8 @@ const reducers = combineReducers({
   colors: colorsReducer,
   rims: rimsReducer,
   wheels: wheelsReducer,
-  form: formReducer
+  form: formReducer,
+  selectedRim: rimsReducer
 });
 
 const store = createStore(reducers, initialState, middlewares);
@@ -48,6 +51,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path={"/"} exact component={App} />
+        <Route path={"/customize"} exact component={Customize} />
         <Route path={"/admin"} exact component={Admin} />
         <Route path={"/admin/bicycles"} exact component={Admin}/>
         <Route path={"/admin/bicycles/new"} exact component={AdminBicycleNew}/>

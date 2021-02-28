@@ -23,8 +23,9 @@ class AdminColorsIndex extends Component {
 
   render() {
     return(
-      <div className="admin-main">
-        <div className="container">
+      <div className="flex-container">
+        <AdminMenuList />
+        <div className="admin-main">
           <h1>Colors available</h1>
           <Link className="btn btn-primary my-2" to="/admin/colors/new">
             Add a Color
@@ -41,7 +42,6 @@ class AdminColorsIndex extends Component {
               {this.renderColors()}
             </tbody>
           </table>
-          <AdminMenuList />
         </div>
       </div>
     );

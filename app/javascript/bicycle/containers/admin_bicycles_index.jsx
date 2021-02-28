@@ -23,24 +23,22 @@ class AdminBicyclesIndex extends Component {
   render() {
     return(
       <div className="admin-main">
-        <div className="container">
-          <h1>Admin Bicycle</h1>
-          <Link className="btn btn-primary my-2" to="/admin/bicycles/new">
-            Add a Bicycle
-          </Link>
-          <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Color Rim</th>
-                <th>Wheel Size</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.renderBicycles()}
-            </tbody>
-          </table>
-        </div>
+        <h1>Admin Bicycle</h1>
+        <Link className="btn btn-primary my-2" to="/admin/bicycles/new">
+          Add a Bicycle
+        </Link>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Color Rim</th>
+              <th>Wheel Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderBicycles()}
+          </tbody>
+        </table>
       </div>
     );
   }
