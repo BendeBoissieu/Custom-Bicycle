@@ -6,6 +6,11 @@ h3{
   text-transform: uppercase;
 }
 
+.app-container {
+  text-align: center;
+  margin-top: 40vh;
+}
+
 .color-preview {
   border: 1px solid #CCC;
   margin: 0 5px;
@@ -13,8 +18,8 @@ h3{
   float: left;
   cursor: pointer;
   overflow: hidden;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }
 
@@ -41,8 +46,15 @@ h3{
 .options {
   background-color: $light-gray;
   text-align: center;
+  padding-bottom: 15px;
 }
+
 .options p {
   margin-top: 15px;
   margin-bottom: 5px;
+}
+
+.container_new_order {
+  max-width: 500px;
+  margin: auto;
 }

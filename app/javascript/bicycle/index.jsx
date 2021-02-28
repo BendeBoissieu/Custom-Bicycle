@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory } from 'history';
 import App from './components/app';
 import Customize from './components/customize';
+import NewOrder from './components/new_order';
 import Admin from './components/admin';
 import AdminBicycleNew from './containers/admin_bicycle_new';
 import AdminColorsIndex from './containers/admin_colors_index';
@@ -29,7 +30,8 @@ const initialState = {
   colors: [],
   rims: [],
   wheels: [],
-  selectedRim: {rim_id: null, color: 'black'}
+  selectedRim: {rim_id: null, color: null},
+  selectedWheel: {wheel_id: null, size: null}
 };
 
 const reducers = combineReducers({
@@ -38,7 +40,8 @@ const reducers = combineReducers({
   rims: rimsReducer,
   wheels: wheelsReducer,
   form: formReducer,
-  selectedRim: rimsReducer
+  selectedRim: rimsReducer,
+  selectedWheel: wheelsReducer
 });
 
 const store = createStore(reducers, initialState, middlewares);
@@ -52,6 +55,7 @@ ReactDOM.render(
       <Switch>
         <Route path={"/"} exact component={App} />
         <Route path={"/customize"} exact component={Customize} />
+        <Route path={"/new_order"} exact component={NewOrder} />
         <Route path={"/admin"} exact component={Admin} />
         <Route path={"/admin/bicycles"} exact component={Admin}/>
         <Route path={"/admin/bicycles/new"} exact component={AdminBicycleNew}/>

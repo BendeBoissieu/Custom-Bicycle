@@ -14,12 +14,11 @@ class CustomizeOptions extends Component {
   handleClickRim = (objectRim) => {
     if(this.props.selectRim){this.props.selectRim(objectRim);}
   }
-  handleClickSize = (event) => {
-    var dataId = event.target.getAttribute('data-id')
-    if(this.props.selectWheel){this.props.selectWheel(dataId);}
+  handleClickWheel = (objectWheel) => {
+    if(this.props.selectWheel){this.props.selectWheel(objectWheel);}
   }
   render(){
-    var selectedWheel = this.props.selectedWheel.length === 0 ? 0 : parseInt(this.props.selectedWheel)
+    var selectedWheel = this.props.selectedWheel.length === 0 ? {wheel_id: null, size: null} : this.props.selectedWheel
 
     var selectedRim = this.props.selectedRim.length === 0 ? {rim_id: null, color: null, color_hex: null} : this.props.selectedRim
 
@@ -38,7 +37,7 @@ class CustomizeOptions extends Component {
 
 
     var rimsColors = this.props.bicycles.map((bicycle) => {
-      if ( bicycle.wheel.wheel_id === selectedWheel || selectedWheel === 0 ){
+      if ( bicycle.wheel.wheel_id === selectedWheel.wheel_id || selectedWheel.wheel_id === null ){
         return(bicycle.rim)
       }
     }).filter(item => item);
@@ -56,11 +55,11 @@ class CustomizeOptions extends Component {
         <ul className="nav inline-flex">
           {wheelsReduced.map((wheel) => {
             let classesWheels = "size-preview";
-            if (wheel.wheel_id == this.props.selectedWheel) {
+            if (wheel.wheel_id == this.props.selectedWheel.wheel_id) {
               classesWheels += " size-selected"
             }
             return(
-              <li key={wheel.wheel_id} value={wheel.size} data-id={wheel.wheel_id} className={classesWheels} onClick={this.handleClickSize}>{wheel.size}</li>
+              <li key={wheel.wheel_id} data-id={wheel.wheel_id} className={classesWheels} onClick={() => this.handleClickWheel({wheel_id: wheel.wheel_id, size: wheel.size})}>{wheel.size}</li>
             )
           })}
         </ul>

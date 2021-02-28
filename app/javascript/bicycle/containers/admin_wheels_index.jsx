@@ -26,7 +26,7 @@ class AdminWheelsIndex extends Component {
         <AdminMenuList />
         <div className="admin-main">
           <h1>Wheels available</h1>
-          <Link className="btn btn-primary my-2" to="/admin/wheels/new">
+          <Link className="btn btn-add my-2" to="/admin/wheels/new">
             Add a Wheel
           </Link>
           <table>

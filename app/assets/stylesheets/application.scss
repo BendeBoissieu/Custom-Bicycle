@@ -35,19 +35,50 @@ th,td {
 
 .btn-validate {
   width: 100%;
-  background-color: $green;
+  background-color: $light-green;
+  text-transform: uppercase;
+  color: $white;
+  opacity: 1 !important;
 }
 
-.btn-validate:hover {
-  background-color: $dark-green;
-}
 
 .btn-enter {
   min-width: 300px;
   background-color: $light-green;
   color: #ffffff;
+  opacity: 1 !important;
+}
+
+.btn-add {
+  background-color: $light-green;
+  color: #ffffff;
+  opacity: 1 !important;
+}
+
+.btn-validate:hover, .btn-enter:hover, .btn-add:hover {
+  background-color: $green;
+  color: $white;
 }
 
 .margin-top-100 {
   margin-top: 100px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+
+.float-left {
+  float: left;
+}
+
+@media screen and (max-width: 768px) {
+  .margin-top-100 {
+    margin-top: 0;
+  }
 }

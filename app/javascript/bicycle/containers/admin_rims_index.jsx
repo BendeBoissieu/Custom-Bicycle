@@ -26,7 +26,7 @@ class AdminRimsIndex extends Component {
         <AdminMenuList />
         <div className="admin-main">
           <h1>Rims available</h1>
-          <Link className="btn btn-primary my-2" to="/admin/rims/new">
+          <Link className="btn btn-add my-2" to="/admin/rims/new">
             Add a Rim
           </Link>
           <table>

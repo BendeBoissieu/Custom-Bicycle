@@ -24,7 +24,7 @@ class AdminBicyclesIndex extends Component {
     return(
       <div className="admin-main">
         <h1>Admin Bicycle</h1>
-        <Link className="btn btn-primary my-2" to="/admin/bicycles/new">
+        <Link className="btn btn-add my-2" to="/admin/bicycles/new">
           Add a Bicycle
         </Link>
         <table>

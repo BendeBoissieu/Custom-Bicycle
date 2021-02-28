@@ -27,7 +27,7 @@ class AdminColorsIndex extends Component {
         <AdminMenuList />
         <div className="admin-main">
           <h1>Colors available</h1>
-          <Link className="btn btn-primary my-2" to="/admin/colors/new">
+          <Link className="btn btn-add my-2" to="/admin/colors/new">
             Add a Color
           </Link>
           <table>

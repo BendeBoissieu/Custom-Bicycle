@@ -92,7 +92,15 @@ export function createBicycle(body, callback) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
-  }).then(response => response.json())
+  }).then(response => response.json(),
+    error => {
+      dispatch({
+        type: 'FETCH_TODOS_FAILURE',
+        filter,
+        message: error.message || 'Something went wrong.',
+      });
+    }
+  )
   .then(callback);
   return {
     type: BICYCLE_CREATED,
@@ -100,10 +108,10 @@ export function createBicycle(body, callback) {
   };
 }
 
-export function selectWheel(wheel_id) {
+export function selectWheel(value) {
   return{
     type: SELECT_WHEEL,
-    payload: wheel_id
+    payload: value
   }
 }
 

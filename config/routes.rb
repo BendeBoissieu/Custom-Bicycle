@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/customize', to: 'pages#home'
   get '/admin', to: 'pages#home'
+  get '/new_order', to: 'pages#home'
   get '/admin/bicycles', to: 'pages#home'
   get '/admin/bicycles/new', to: 'pages#home'
   get '/admin/colors', to: 'pages#home'
