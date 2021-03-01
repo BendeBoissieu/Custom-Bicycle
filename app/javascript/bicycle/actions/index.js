@@ -6,6 +6,9 @@ export const RIM_CREATED = 'RIM_CREATED';
 export const FETCH_WHEELS = 'FETCH_WHEELS';
 export const WHEEL_CREATED = 'WHEEL_CREATED';
 export const BICYCLE_CREATED = 'BICYCLE_CREATED';
+export const SELECT_WHEEL = 'SELECT_WHEEL';
+export const SELECT_RIM = 'SELECT_RIM';
+
 
 const ROOT_URL = '/api/v1';
 
@@ -89,10 +92,32 @@ export function createBicycle(body, callback) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
-  }).then(response => response.json())
+  }).then(response => response.json(),
+    error => {
+      dispatch({
+        type: 'FETCH_TODOS_FAILURE',
+        filter,
+        message: error.message || 'Something went wrong.',
+      });
+    }
+  )
   .then(callback);
   return {
     type: BICYCLE_CREATED,
     payload: request
   };
+}
+
+export function selectWheel(value) {
+  return{
+    type: SELECT_WHEEL,
+    payload: value
+  }
+}
+
+export function selectRim(value) {
+  return{
+    type: SELECT_RIM,
+    payload: value
+  }
 }

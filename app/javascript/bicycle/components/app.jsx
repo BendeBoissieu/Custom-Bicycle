@@ -1,17 +1,12 @@
 import React from 'react';
-import AdminBicyclesIndex from '../containers/admin_bicycles_index';
+import { Link } from 'react-router-dom';
 
 const App = () => {
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-sm-7 col-xs-12">
-        </div>
-        <div className="col-sm-5 col-xs-12">
-          <h1>App</h1>
-          <h2>Bicycle</h2>
-          <AdminBicyclesIndex />
-        </div>
+      <div className="app-container">
+        <h1 style={{marginBottom: '20px'}}>Welcome to Pandabize</h1>
+        <Link className="btn btn-enter" to="/customize">START</Link>
       </div>
     </div>
   );

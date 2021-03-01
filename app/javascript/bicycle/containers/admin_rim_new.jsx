@@ -38,25 +38,25 @@ class RimNew extends Component {
   }
   render() {
     return (
-      <div className="container_new_element">
-        <h2 style={{textAlign: 'center'}}>Add a new rim</h2>
-        <div className="new_Rim">
-          <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
-            <label>Choose the Color</label>
-            <div>
-              <Field name="color_id" component="select">
-                <option>Select a color</option>
-                {this.renderSelectColors()}
-              </Field>
-            </div>
-            <button className="btn btn-primary my-2" type="submit" disabled={this.props.pristine || this.props.submitting}>
+      <div className="container_form">
+        <h3 className="margin-bottom-20">Add a new rim</h3>
+        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+          <label>Choose the Color</label>
+          <div>
+            <Field name="color_id" component="select">
+              <option>Select a color</option>
+              {this.renderSelectColors()}
+            </Field>
+          </div>
+          <div className="buttons">
+            <button className="btn btn-enter my-2 float-left" type="submit" disabled={this.props.pristine || this.props.submitting}>
               Add the rim
             </button>
             <Link to={'/admin/rims'} className="btn btn-secondary my-2" style={{float: 'right'}}>
               Back
             </Link>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     );
   }

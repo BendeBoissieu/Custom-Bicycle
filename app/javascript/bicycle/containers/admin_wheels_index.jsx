@@ -22,10 +22,11 @@ class AdminWheelsIndex extends Component {
 
   render() {
     return(
-      <div className="admin-main">
-        <div className="container">
+      <div className="flex-container">
+        <AdminMenuList />
+        <div className="admin-main">
           <h1>Wheels available</h1>
-          <Link className="btn btn-primary my-2" to="/admin/wheels/new">
+          <Link className="btn btn-add my-2" to="/admin/wheels/new">
             Add a Wheel
           </Link>
           <table>
@@ -39,7 +40,6 @@ class AdminWheelsIndex extends Component {
               {this.renderWheels()}
             </tbody>
           </table>
-          <AdminMenuList />
         </div>
       </div>
     );

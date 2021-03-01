@@ -10,8 +10,8 @@ class AdminMenuList extends Component {
     return(
       <div className="admin-sidenav">
         <Link to="/admin">Bicycles</Link>
-        <Link to="/admin/rims">Rims</Link>
         <Link to="/admin/wheels">Wheels</Link>
+        <Link to="/admin/rims">Rims</Link>
         <Link to="/admin/colors">Colors</Link>
       </div>
     );

@@ -22,10 +22,11 @@ class AdminRimsIndex extends Component {
 
   render() {
     return(
-      <div className="admin-main">
-        <div className="container">
+      <div className="flex-container">
+        <AdminMenuList />
+        <div className="admin-main">
           <h1>Rims available</h1>
-          <Link className="btn btn-primary my-2" to="/admin/rims/new">
+          <Link className="btn btn-add my-2" to="/admin/rims/new">
             Add a Rim
           </Link>
           <table>
@@ -39,7 +40,6 @@ class AdminRimsIndex extends Component {
               {this.renderRims()}
             </tbody>
           </table>
-          <AdminMenuList />
         </div>
       </div>
     );

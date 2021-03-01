@@ -1,17 +1,84 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import "bootstrap";
-@import "./admin/index.scss";
+@import "./config/colors";
+@import "./admin/index";
+@import "./customize/index";
+
+h1 {
+  font-size: 32px;
+  margin-top: 25px;
+}
+h2 {
+  font-size: 22px;
+  margin-top: 15px;
+}
+h3 {
+  font-size: 26px;
+}
+p,th,td { font-size: 14px; }
+body {
+  font-family: "Lato", sans-serif;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 5px 15px;
+  margin: auto;
+}
+
+th,td {
+  text-align: center;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.btn-validate {
+  width: 100%;
+  background-color: $light-green;
+  text-transform: uppercase;
+  color: $white;
+  opacity: 1 !important;
+}
+
+
+.btn-enter {
+  min-width: 300px;
+  background-color: $light-green;
+  color: #ffffff;
+  opacity: 1 !important;
+}
+
+.btn-add {
+  background-color: $light-green;
+  color: #ffffff;
+  opacity: 1 !important;
+}
+
+.btn-validate:hover, .btn-enter:hover, .btn-add:hover {
+  background-color: $green;
+  color: $white;
+}
+
+.margin-top-100 {
+  margin-top: 100px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+
+.float-left {
+  float: left;
+}
+
+@media screen and (max-width: 768px) {
+  .margin-top-100 {
+    margin-top: 0;
+  }
+}

@@ -47,32 +47,32 @@ class BicycleNew extends Component {
   }
   render() {
     return (
-      <div className="container_new_element">
-        <h2 style={{textAlign: 'center'}}>Add a new bicycle</h2>
-        <div className="new_Bicycle">
-          <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
-            <label>Choose the Rim color</label>
-            <div>
-              <Field name="rim_id" component="select">
-                <option>Choose a color</option>
-                {this.renderSelectRims()}
-              </Field>
-            </div>
-            <label>Choose the Wheel size</label>
-            <div>
-              <Field name="wheel_id" component="select">
-                <option>Choose a size</option>
-                {this.renderSelectWheels()}
-              </Field>
-            </div>
-            <button className="btn btn-primary my-2" type="submit" disabled={this.props.pristine || this.props.submitting}>
+      <div className="container_form">
+        <h3 className="margin-bottom-20">Add a new bicycle</h3>
+        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+          <label>Choose the Rim color</label>
+          <div>
+            <Field name="rim_id" component="select">
+              <option>Choose a color</option>
+              {this.renderSelectRims()}
+            </Field>
+          </div>
+          <label>Choose the Wheel size</label>
+          <div>
+            <Field name="wheel_id" component="select">
+              <option>Choose a size</option>
+              {this.renderSelectWheels()}
+            </Field>
+          </div>
+          <div className="buttons">
+            <button className="btn btn-enter my-2 float-left" type="submit" disabled={this.props.pristine || this.props.submitting}>
               Add the bicycle
             </button>
             <Link to={'/admin/bicycles'} className="btn btn-secondary my-2" style={{float: 'right'}}>
               Back
             </Link>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     );
   }

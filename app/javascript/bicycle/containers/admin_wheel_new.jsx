@@ -27,25 +27,24 @@ class WheelsNew extends Component {
   // in this form we need to create function onSubmit that will call the action post
   render() {
     return (
-      <div className="container_new_element">
-        <h2 style={{textAlign: 'center'}}>Add a new wheel</h2>
-        <div className="new_Wheel">
-          <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
-            <Field
-              label="Size"
-              name="size"
-              type="text"
-              component={this.renderField}
-            />
-
-            <button className="btn btn-primary my-2" type="submit" disabled={this.props.pristine || this.props.submitting}>
+      <div className="container_form">
+        <h3 className="margin-bottom-20">Add a new wheel</h3>
+        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+          <Field
+            label="Size"
+            name="size"
+            type="text"
+            component={this.renderField}
+          />
+          <div className="buttons">
+            <button className="btn btn-enter my-2 float-left" type="submit" disabled={this.props.pristine || this.props.submitting}>
               Add the wheel
             </button>
             <Link to={'/admin/wheels'} className="btn btn-secondary my-2" style={{float: 'right'}}>
               Back
             </Link>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     );
   }
