@@ -55,5 +55,4 @@ function mapDispatchToProps(dispatch) {
     { fetchBicycles }, dispatch );
 };
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(AdminBicyclesIndex);

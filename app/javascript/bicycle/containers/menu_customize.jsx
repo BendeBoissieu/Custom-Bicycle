@@ -23,9 +23,7 @@ class CustomizeOptions extends Component {
     var selectedRim = this.props.selectedRim.length === 0 ? {rim_id: null, color: null, color_hex: null} : this.props.selectedRim
 
     var wheels = this.props.bicycles.map((bicycle) => {
-      if ( bicycle.rim.rim_id === selectedRim.rim_id || selectedRim.rim_id === null ){
-        return(bicycle.wheel)
-      }
+      return(bicycle.wheel)
     }).filter(item => item);
 
     var wheelsReduced= wheels.reduce((current,next)=>{

@@ -1,3 +1,4 @@
+Order.all.destroy_all
 Bicycle.all.destroy_all
 Wheel.all.destroy_all
 Rim.all.destroy_all

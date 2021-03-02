@@ -24,6 +24,9 @@ Endpoint GET all rims
 Endpoint GET all wheels
 /api/v1/wheels
 
+Endpoint GET all orders
+/api/v1/orders
+
 Endpoint POST Create a color
 curl -i -X POST \
      -H 'Content-Type: application/json'\

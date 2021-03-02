@@ -57,5 +57,4 @@ function mapDispatchToProps(dispatch) {
     { fetchRims }, dispatch );
 };
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(AdminRimsIndex);

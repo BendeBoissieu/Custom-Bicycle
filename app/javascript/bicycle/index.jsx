@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory } from 'history';
 import App from './components/app';
 import Customize from './components/customize';
-import NewOrder from './components/new_order';
 import Admin from './components/admin';
 import AdminBicycleNew from './containers/admin_bicycle_new';
 import AdminColorsIndex from './containers/admin_colors_index';
@@ -17,9 +16,12 @@ import AdminRimsIndex from './containers/admin_rims_index';
 import AdminRimNew from './containers/admin_rim_new';
 import AdminWheelsIndex from './containers/admin_wheels_index';
 import AdminWheelNew from './containers/admin_wheel_new';
+import AdminOrdersIndex from './containers/admin_orders_index';
+import OrderShow from './components/confirmation';
 import bicyclesReducer from './reducers/bicycles_reducer';
 import colorsReducer from './reducers/colors_reducer';
 import rimsReducer from './reducers/rims_reducer';
+import ordersReducer from './reducers/orders_reducer';
 import wheelsReducer from './reducers/wheels_reducer';
 import { reducer as formReducer } from 'redux-form';
 
@@ -31,7 +33,8 @@ const initialState = {
   rims: [],
   wheels: [],
   selectedRim: {rim_id: null, color: null},
-  selectedWheel: {wheel_id: null, size: null}
+  selectedWheel: {wheel_id: null, size: null},
+  orders: []
 };
 
 const reducers = combineReducers({
@@ -41,7 +44,8 @@ const reducers = combineReducers({
   wheels: wheelsReducer,
   form: formReducer,
   selectedRim: rimsReducer,
-  selectedWheel: wheelsReducer
+  selectedWheel: wheelsReducer,
+  orders: ordersReducer
 });
 
 const store = createStore(reducers, initialState, middlewares);
@@ -55,7 +59,6 @@ ReactDOM.render(
       <Switch>
         <Route path={"/"} exact component={App} />
         <Route path={"/customize"} exact component={Customize} />
-        <Route path={"/new_order"} exact component={NewOrder} />
         <Route path={"/admin"} exact component={Admin} />
         <Route path={"/admin/bicycles"} exact component={Admin}/>
         <Route path={"/admin/bicycles/new"} exact component={AdminBicycleNew}/>
@@ -65,6 +68,8 @@ ReactDOM.render(
         <Route path={"/admin/rims/new"} exact component={AdminRimNew}/>
         <Route path={"/admin/wheels"} exact component={AdminWheelsIndex} />
         <Route path={"/admin/wheels/new"} exact component={AdminWheelNew}/>
+        <Route path={"/admin/orders"} exact component={AdminOrdersIndex} />
+        <Route path={"/confirmation"} component={OrderShow} />
       </Switch>
     </Router>
   </Provider>,

@@ -4,11 +4,13 @@ import Admin from '../components/admin';
 import AdminColorsIndex from './admin_colors_index';
 import AdminRimsIndex from './admin_rims_index';
 import AdminWheelsIndex from './admin_wheels_index';
+import AdminOrdersIndex from './admin_orders_index';
 
 class AdminMenuList extends Component {
   render() {
     return(
       <div className="admin-sidenav">
+        <Link to="/admin/orders">Orders</Link>
         <Link to="/admin">Bicycles</Link>
         <Link to="/admin/wheels">Wheels</Link>
         <Link to="/admin/rims">Rims</Link>
