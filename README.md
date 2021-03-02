@@ -1,16 +1,21 @@
 # README
 
+https://custom-bicycle.herokuapp.com/
+
 To access to the admin part:
 Add /admin to the url
+https://custom-bicycle.herokuapp.com/admin
 
-On this area, you can see the colors, rims, wheels and bicycles available.
+On this area, you can see the colors, rims, wheels, bicycles and orders available.
 
 To create a new bicycle, you have to select a wheel and a rim
 To create a rim, you have to select a color
 
 Color and Rim are separate, because the colors can be use if we decide to add a Saddle
 
+The orders are only the biycle choosen by the customer, there is no user form to make it more simple.
 
+The endpoint destroy and update are not done.
 
 Endpoint GET all bicycles
 /api/v1/bicycles
