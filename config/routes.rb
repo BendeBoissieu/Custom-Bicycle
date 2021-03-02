@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/customize', to: 'pages#home'
   get '/admin', to: 'pages#home'
-  get '/new_order', to: 'pages#home'
+  get '/admin/orders', to: 'pages#home'
+  get '/confirmation', to: 'pages#home'
   get '/admin/bicycles', to: 'pages#home'
   get '/admin/bicycles/new', to: 'pages#home'
   get '/admin/colors', to: 'pages#home'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   get '/admin/rims/new', to: 'pages#home'
   get '/admin/wheels', to: 'pages#home'
   get '/admin/wheels/new', to: 'pages#home'
+  get '/admin/bicycles', to: 'pages#home'
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
       resources :colors, only: [ :index, :create ]
       resources :rims, only: [ :index, :create ]
       resources :wheels, only: [ :index, :create ]
+      resources :orders, only: [ :index, :create, :show ]
     end
   end
 end

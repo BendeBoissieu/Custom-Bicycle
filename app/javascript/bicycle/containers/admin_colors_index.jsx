@@ -59,5 +59,4 @@ function mapDispatchToProps(dispatch) {
     { fetchColors }, dispatch );
 };
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(AdminColorsIndex);

@@ -1,10 +1,8 @@
 .flex-container {
   display: flex;
-  align-items: center;
 }
 
 .admin-sidenav {
-  height: 100%;
   width: 160px;
   z-index: 1;
   background-color: $light-green;

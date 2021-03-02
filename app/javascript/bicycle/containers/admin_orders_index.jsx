@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchWheels } from '../actions';
+import { fetchOrders } from '../actions';
 import { bindActionCreators } from 'redux';
 import AdminMenuList from './admin_menu_list';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
-class AdminWheelsIndex extends Component {
+class AdminOrdersIndex extends Component {
   componentWillMount(){
-    this.props.fetchWheels();
+    this.props.fetchOrders();
   }
-  renderWheels() {
-    return this.props.wheels.map((wheel) => {
+  renderOrders() {
+
+    return this.props.orders.map((order) => {
       return(
-        <tr key={wheel.id}>
-          <td>{wheel.id}</td>
-          <td>{wheel.size}</td>
+        <tr key={order.id}>
+          <td>{order.id}</td>
+          <td>{order.bicycle_id}</td>
+          <td>{moment(order.created_at).format('DD/MM/YYYY')}</td>
         </tr>
       )
     });
@@ -25,19 +28,17 @@ class AdminWheelsIndex extends Component {
       <div className="flex-container">
         <AdminMenuList />
         <div className="admin-main">
-          <h1>Wheels available</h1>
-          <Link className="btn btn-add my-2" to="/admin/wheels/new">
-            Add a Wheel
-          </Link>
+          <h1>Admin Order</h1>
           <table>
             <thead>
               <tr>
                 <th>#</th>
-                <th>Size</th>
+                <th>Bicycle id</th>
+                <th>Created at</th>
               </tr>
             </thead>
             <tbody>
-              {this.renderWheels()}
+              {this.renderOrders()}
             </tbody>
           </table>
         </div>
@@ -48,13 +49,13 @@ class AdminWheelsIndex extends Component {
 
 function mapStateToProps(state) {
   return {
-    wheels: state.wheels
+    orders: state.orders
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { fetchWheels }, dispatch );
+    { fetchOrders }, dispatch );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminWheelsIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminOrdersIndex);

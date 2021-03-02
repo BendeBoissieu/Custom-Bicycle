@@ -8,7 +8,8 @@ export const WHEEL_CREATED = 'WHEEL_CREATED';
 export const BICYCLE_CREATED = 'BICYCLE_CREATED';
 export const SELECT_WHEEL = 'SELECT_WHEEL';
 export const SELECT_RIM = 'SELECT_RIM';
-
+export const ORDER_CREATED = 'ORDER_CREATED';
+export const FETCH_ORDERS = 'FETCH_ORDERS';
 
 const ROOT_URL = '/api/v1';
 
@@ -92,16 +93,7 @@ export function createBicycle(body, callback) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
-  }).then(response => response.json(),
-    error => {
-      dispatch({
-        type: 'FETCH_TODOS_FAILURE',
-        filter,
-        message: error.message || 'Something went wrong.',
-      });
-    }
-  )
-  .then(callback);
+  }).then(callback);
   return {
     type: BICYCLE_CREATED,
     payload: request
@@ -120,4 +112,26 @@ export function selectRim(value) {
     type: SELECT_RIM,
     payload: value
   }
+}
+
+export function fetchOrders() {
+  const promise = fetch(`${ROOT_URL}/orders`)
+    .then(response => response.json());
+  return {
+    type: FETCH_ORDERS,
+    payload: promise
+  }
+}
+
+export function createOrder(bicycle_id, callback) {
+  var body = {bicycle_id: bicycle_id}
+  const request = fetch(`${ROOT_URL}/orders`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  }).then(callback);
+  return {
+    type: ORDER_CREATED,
+    payload: request
+  };
 }

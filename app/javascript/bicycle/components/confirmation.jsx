@@ -27,7 +27,7 @@ class NewOrder extends Component {
 function mapStateToProps(state) {
   return {
     selectedRim: state.rims,
-    selectedWheel: state.wheels
+    selectedWheel: state.wheels,
   };
 }
 

@@ -3,12 +3,25 @@ import { Link } from 'react-router-dom';
 import BicycleImage from 'images/bicycle.png'
 import MenuCustomize from '../containers/menu_customize';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { createOrder } from '../actions';
 
 class Customize extends Component {
   isClickable = () => {
     if(this.props.selectedRim.length === 0 || this.props.selectedWheel.length === 0) {
       return false
     } else { return true }
+  }
+
+  orderCreate = (selection) => {
+    var arrayBicycle =  this.props.bicycles.filter(function(bicycle) {
+    return (bicycle.wheel.wheel_id == selection.wheel_id && bicycle.rim.rim_id == selection.rim_id);
+    });
+    var bicycleSelected = ( arrayBicycle.length === 1 ) ? arrayBicycle[0]['id'] : null
+    if (bicycleSelected) {this.props.createOrder(bicycleSelected, () => {
+        this.props.history.push('/confirmation');
+      });
+    }
   }
 
   render(){
@@ -39,7 +52,7 @@ class Customize extends Component {
               <h3>Select an option</h3>
               <MenuCustomize />
             </div>
-            <Link className="btn btn-validate" to="/new_order" style={this.isClickable() ? null : {pointerEvents: "none"}}>Validate</Link>
+            <Link className="btn btn-validate" style={this.isClickable() ? null : {pointerEvents: "none"}} to="#" onClick={() => this.orderCreate({wheel_id: this.props.selectedWheel.wheel_id, rim_id: this.props.selectedRim.rim_id})}>Validate</Link>
           </div>
         </div>
       </div>
@@ -50,9 +63,15 @@ class Customize extends Component {
 function mapStateToProps(state) {
   return {
     selectedRim: state.rims,
-    selectedWheel: state.wheels
+    selectedWheel: state.wheels,
+    bicycles: state.bicycles
   };
 }
 
-export default connect(mapStateToProps, null) (Customize);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { createOrder }, dispatch );
+};
+
+export default connect(mapStateToProps, mapDispatchToProps) (Customize);
 
